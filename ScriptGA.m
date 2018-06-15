@@ -4,7 +4,7 @@ nProblems = 10; nRuns = 4;
 FVAL = NaN(nProblems,nRuns);
 
 for  p = 1:nProblems
-    
+
     [lb, ub,FITNESSFCN] = ProblemDetails(p);
     
     Nvars = length(lb);  Sol = NaN(nRuns,Nvars);
@@ -19,10 +19,9 @@ for  p = 1:nProblems
     % This section is required only if the Gantt Charts are to be plotted
     plotfigure(FVAL(p,:), Sol, Nvars, p)
 
-    % Gantt Chart subplot for both sets in each problem as shown in SKSJSSPUpload.pdf can 
-    % be obtained by commenting function call plotfigure (line 21) and uncommenting function 
-    % call subplotfigure (line 27). This function (subplotfigure) also shows how to set title, 
-    % barWidth, xLabel and yLabel to Gantt Chart.
-    % subplotfigure(FVAL(p,:), Sol, Nvars, p)
+    % comment line 20 and uncomment line 23 to have subplots of Gantt Chart
+    % for both data set of each problem
+    
+%     subplotfigure(FVAL(p,:), Sol, Nvars, p)
 end
 showResultTable(FVAL,nProblems,nRuns)
