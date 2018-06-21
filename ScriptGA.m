@@ -24,4 +24,4 @@ for  p = 1:nProblems
     
 %     subplotfigure(FVAL(p,:), Sol, Nvars, p)
 end
-showResultTable(FVAL,nProblems,nRuns)
+showStatTable(FVAL,nProblems,nRuns)
