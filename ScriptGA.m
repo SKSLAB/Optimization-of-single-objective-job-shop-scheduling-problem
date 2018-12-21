@@ -4,7 +4,7 @@ nProblems = 10; nRuns = 4;
 FVAL = NaN(nProblems,nRuns);
 
 for  p = 1:nProblems
-
+    
     [lb, ub,FITNESSFCN] = ProblemDetails(p);
     
     Nvars = length(lb);  Sol = NaN(nRuns,Nvars);
@@ -17,11 +17,11 @@ for  p = 1:nProblems
     end
     
     % This section is required only if the Gantt Charts are to be plotted
-    plotfigure(FVAL(p,:), Sol, Nvars, p)
+     plotfigure(FVAL(p,:), Sol, p)
 
     % comment line 20 and uncomment line 23 to have subplots of Gantt Chart
     % for both data set of each problem
     
-%     subplotfigure(FVAL(p,:), Sol, Nvars, p)
+%     subplotfigure(FVAL(p,:), Sol, p)
 end
-showStatTable(FVAL,nProblems,nRuns)
+showResultTable(FVAL,nProblems,nRuns)
